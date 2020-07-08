@@ -13,6 +13,7 @@ class MyWork(context: Context, workerParams: WorkerParameters) : Worker(context,
     override fun doWork(): Result {
         CoroutineScope(Dispatchers.Default).launch {
             repeat(100){
+                delay(1000)
                 println("Hello from WorkerManager $it")
             }
         }
